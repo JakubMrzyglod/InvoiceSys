@@ -1,0 +1,15 @@
+<table>
+{{#each items as |item|}}
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.unit}}</td>
+        <td>{{item.net}}</td>
+        <td>{{item.tax}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.totalnet}}</td>
+        <td>{{item.totaltax}}</td>
+        <td>{{item.totalgross}}</td>
+    </tr>
+{{/each}}
+</table>
