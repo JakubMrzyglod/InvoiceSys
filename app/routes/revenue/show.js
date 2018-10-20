@@ -3,7 +3,9 @@ import Changeset from 'ember-changeset';
 
 export default Route.extend({
   async model(params){
+
       let model = await this.store.findRecord('invoice', params.id);
+      console.log(model.positions)
       this.changeset = new Changeset(model);
       return this.changeset;
   },

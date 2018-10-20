@@ -3,7 +3,8 @@ export default function() {
   this.namespace = '/api';
 
   let invoices = {
-    data:[{
+    data:[
+      {
     type: 'invoice',
     id: '0001-2018',
     attributes:{
@@ -12,13 +13,24 @@ export default function() {
         net: 1000,
         gross: 1230,
         vat: 230,
-      },
-      relationships:{
         contractor:{
-          data:{
-          id: '002',
-          type: 'contractor'}
-        }
+          taxnum: '000001235',
+          name: 'Company nice name',
+          city: 'Boston',
+          zipcode: '90310',
+          address: 'Sweet st. 982',  
+        },
+        items:[{
+          name:'Product 1',
+          description:'',
+          unit:'psc',
+          net:25,
+          tax:23,
+          quantity:4,
+          totalnet:100,
+          totaltax:23,
+          totalgross:123
+        }]
       }
     },{
     type: 'invoice',
@@ -29,36 +41,26 @@ export default function() {
         net: 1000,
         gross: 1230,
         vat: 230,
-    },
-    relationships:{
-      contractor:{
-        data:{
-        id: '001',
-        type: 'contractor'}
-      }
+        contractor:{
+          taxnum: '547898989',
+          name: 'Company awesome name',
+          city: 'London',
+          zipcode: '43-300',
+          address: 'King st. 133',  
+        },
+        items:[{
+          name:'Product 2',
+          description:'',
+          unit:'psc',
+          net:20,
+          tax:23,
+          quantity:5,
+          totalnet:100,
+          totaltax:23,
+          totalgross:123
+        }]
     }
-  }],
-  included:[{
-    id: '001',
-    type: 'contractor',
-    attributes:{
-      taxnum: '000001235',
-      name: 'Company nice name',
-      city: 'Boston',
-      zipcode: '90310',
-      address: 'Sweet st. 982',  
-    } 
-  },{
-    id: '002',
-    type: 'contractor',
-    attributes:{
-      taxnum: '547898989',
-      name: 'Company awesome name',
-      city: 'London',
-      zipcode: '43-300',
-      address: 'King st. 133',  
-    } 
-  }]
+}]
 }
   this.get('/invoices', function() {
     return invoices;

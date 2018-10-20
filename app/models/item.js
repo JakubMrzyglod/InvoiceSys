@@ -5,5 +5,6 @@ export default DS.Model.extend({
     description: DS.attr(),
     unit: DS.attr(),
     net: DS.attr(),
-    tax: DS.attr()
+    tax: DS.attr(),
+    positions: DS.hasMany('positon')
 });
