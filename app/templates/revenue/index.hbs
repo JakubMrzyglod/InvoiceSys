@@ -1,0 +1,31 @@
+<div>
+  <table class="table table-hover" style="margin:2%">
+    <thead class="table-borderless">
+      <tr>
+        <th>Number</th>
+        <th>Data</th>
+        <th>Contractor</th>
+        <th>Net Value</th>
+        <th>Vat Value</th>
+        <th>Gross Value</th>
+      </tr>
+    </thead>
+    <tbody class="border">
+      {{#each model as |invoice|}}
+      {{#link-to 'revenue.show' invoice.id tagName='tr'}}
+          <td class="align-middle">{{invoice.number}}</td>
+          <td class="align-middle">{{invoice.date}}</td>
+          <td class="align-middle">
+            <h6>{{invoice.contractor.name}}</h6>
+            <span class="text-muted">{{invoice.contractor.zipcode}} {{invoice.contractor.city}}<br>
+              {{invoice.contractor.address}}</span>
+          </td>
+          <td class="align-middle">{{invoice.net}}zł</td>
+          <td class="align-middle">{{invoice.gross}}zł</td>
+          <td class="align-middle">{{invoice.vat}}zł</td>
+        {{/link-to}}
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{outlet}}
