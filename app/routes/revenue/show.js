@@ -21,7 +21,8 @@ export default Route.extend({
       const {id, name, items}  = model;
       this.store.findRecord('invoice',id)
       .then(function(invoice){
-        console.log(invoice)
+        invoice.set('name',name)
+        invoice.set('items',items)
         invoice.save();
       })
       // let invoice = this.store.findRecord('invoice', model.id)

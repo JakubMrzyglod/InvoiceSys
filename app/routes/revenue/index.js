@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 export default Route.extend({
-    model(){
-        return this.store.findAll('invoice');
+    async model(){
+        return await this.store.findAll('invoice');
     }
 });
