@@ -1,15 +1,15 @@
 <table>
 {{#each items as |item|}}
     <tr>
-        <td>{{item.name}}</td>
-        <td>{{item.description}}</td>
-        <td>{{item.unit}}</td>
-        <td>{{item.net}}</td>
-        <td>{{item.tax}}</td>
-        <td>{{item.quantity}}</td>
-        <td>{{item.totalnet}}</td>
-        <td>{{item.totaltax}}</td>
-        <td>{{item.totalgross}}</td>
+        <td>{{input value=item.name}}</td>
+        {{!-- <td>{{input value=item.description}}</td>
+        <td>{{input value=item.unit}}</td>
+        <td>{{input value=item.net}}</td>
+        <td>{{input value=item.tax}}</td> --}}
+        <td>{{input value=item.quantity}}</td>
+        {{!-- <td>{{input value=item.totalnet}}</td>
+        <td>{{input value=item.totaltax}}</td>
+        <td>{{input value=item.totalgross}}</td> --}}
     </tr>
 {{/each}}
 </table>

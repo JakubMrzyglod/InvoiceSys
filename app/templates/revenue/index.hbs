@@ -13,7 +13,7 @@
     <tbody class="border">
       {{#each model as |invoice|}}
       {{#link-to 'revenue.show' invoice.id tagName='tr'}}
-          <td class="align-middle">{{invoice.number}}</td>
+          <td class="align-middle">{{invoice.id}}</td>
           <td class="align-middle">{{invoice.date}}</td>
           <td class="align-middle">
             <h6>{{invoice.contractor.name}}</h6>

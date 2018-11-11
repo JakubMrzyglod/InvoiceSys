@@ -13,13 +13,6 @@ export default function() {
         net: 1000,
         gross: 1230,
         vat: 230,
-        contractor:{
-          taxnum: '000001235',
-          name: 'Company nice name',
-          city: 'Boston',
-          zipcode: '90310',
-          address: 'Sweet st. 982',  
-        },
         items:[{
           name:'Product 1',
           description:'',
@@ -30,7 +23,24 @@ export default function() {
           totalnet:100,
           totaltax:23,
           totalgross:123
+        },{
+          name:'Product 1',
+          description:'',
+          unit:'psc',
+          net:25,
+          tax:23,
+          quantity:4,
+          totalnet:100,
+          totaltax:23,
+          totalgross:123
         }]
+      },
+      relationships:{
+        contractor:{
+          data:{
+          type:'contractor',
+          id:'01'}
+        }
       }
     },{
     type: 'invoice',
@@ -60,6 +70,17 @@ export default function() {
           totalgross:123
         }]
     }
+}],
+included:[{
+  type:'contractor',
+  id:'01',
+  attributes:{
+    taxnum: '000001235',
+    name: 'Company nice name',
+    city: 'Boston',
+    zipcode: '90310',
+    address: 'Sweet st. 982',  
+  }
 }]
 }
   this.get('/invoices', function() {

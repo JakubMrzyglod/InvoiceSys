@@ -1,11 +1,11 @@
-<span>Tax Number</span>{{input value=model.contractor.taxnum}}
-<span>Name</span>{{input value=model.contractor.name}}
-<span>City</span>{{input value=model.contractor.city}}
+{{!-- <span>Tax Number</span>{{input value=model.contractor.taxnum}} --}}
+<span>Name</span>{{input value=model.name}}
+{{!-- <span>City</span>{{input value=model.contractor.city}}
 <span>Zip Code</span>{{input value=model.contractor.zipcode}}
 <span>Address</span>{{input value=model.contractor.address}}
 <span>Number</span>{{input value=model.number}}
-<span>Date</span>{{input value=model.date}}
+<span>Date</span>{{input value=model.date}} --}}
 {{items-list items=model.items}}
-<button {{action 'submit' model}}>Submit</button>
+<button {{action 'submit' model model.id}}>Submit</button>
 <button {{action 'rollback' model}}>Cancel</button>
 {{outlet}}
