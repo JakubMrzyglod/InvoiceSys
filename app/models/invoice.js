@@ -8,6 +8,6 @@ export default DS.Model.extend({
             // gross: DS.attr(),
             // vat: DS.attr(),
             // contractor: DS.belongsTo('contractor'),
-            items: DS.attr(),
+            items: DS.hasMany(),
             // items: DS.hasMany('item')
 });
