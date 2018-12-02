@@ -1,7 +1,28 @@
 {{!-- <span>Tax Number</span>{{input value=model.contractor.taxnum}} --}}
-<span>Name</span>{{input value=model.name}}
+<span>Name</span>{{input value=changeset.name}}
 {{!-- <span>City</span>{{input value=model.contractor.city}}
 <span>Zip Code</span>{{input value=model.contractor.zipcode}}
 <span>Address</span>{{input value=model.contractor.address}}
 <span>Number</span>{{input value=model.number}}
 <span>Date</span>{{input value=model.date}} --}}
+
+{{changeset.invoiceItems.length}}
+<table>
+  {{#each changeset.invoiceItems as |item|}}
+  <tr>
+    <td>{{input value=item.name}}</td>
+    {{!-- <td>{{input value=item.description}}</td>
+    <td>{{input value=item.unit}}</td>
+    <td>{{input value=item.net}}</td>
+    <td>{{input value=item.tax}}</td> --}}
+    <td>{{input value=item.quantity}}</td>
+    {{!-- <td>{{input value=item.totalnet}}</td>
+    <td>{{input value=item.totaltax}}</td>
+    <td>{{input value=item.totalgross}}</td> --}}
+  </tr>
+  {{/each}}
+</table>
+
+<button {{action 'addItem'}}>add</button>
+<button {{action 'submit'}}>Submit</button>
+<button {{action 'rollback'}}>Cancel</button>
